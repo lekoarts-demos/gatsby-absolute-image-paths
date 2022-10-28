@@ -10,8 +10,7 @@ const getFileNode = (options) => (source, _, context, info) => {
 
   const filePath = path.join(__dirname, options.path, partialPath)
 
-  const fileNode = context.nodeModel.runQuery({
-    firstOnly: true,
+  const fileNode = context.nodeModel.findOne({
     type: 'File',
     query: {
       filter: {
